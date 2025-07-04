@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel-wrapper {
+      width: 100%;
+      max-width: 700px;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      will-change: transform;
+    }
+
+    .carousel-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 2vw;
+      box-sizing: border-box;
+      font-size: 4vw;
+      font-weight: bold;
+      width: 100%;
+      border: 1px solid red;
+    }
