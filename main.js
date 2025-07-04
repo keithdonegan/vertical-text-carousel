@@ -1,58 +1,12 @@
-
-const track = document.getElementById('carouselTrack');
-const wrapper = document.querySelector('.carousel-wrapper');
-
-let items = Array.from(track.children);
-let animationFrame;
-let position = 0;
-let speed = 0.5;
-
-function setupCarousel() {
-// Clear previously cloned items
-const clones = track.querySelectorAll('.carousel-item[data-clone]');
-clones.forEach(c => c.remove());
-
-// Count actual (original) items
-const itemCount = items.length;
-
-// Calculate height per item in vh
-const vhPerItem = 100 / itemCount;
-
-// Apply dynamic inline style to each original item
-items.forEach(item => {
-item.style.height = `${vhPerItem}vh`;
-});
-
-// Clone original items for seamless loop
-items.forEach(item => {
-const clone = item.cloneNode(true);
-clone.setAttribute('data-clone', 'true');
-clone.style.height = `${vhPerItem}vh`;
-track.appendChild(clone);
-});
-}
-
-function animate() {
-position -= speed;
-
-if (Math.abs(position) >= track.scrollHeight / 2) {
-position = 0;
-}
-
-track.style.transform = `translateY(${position}px)`;
-animationFrame = requestAnimationFrame(animate);
-}
-
-function init() {
-setupCarousel();
-animate();
-}
-
-window.addEventListener('load', init);
-window.addEventListener('resize', () => {
-cancelAnimationFrame(animationFrame);
-position = 0;
-track.style.transform = `translateY(0)`;
-setupCarousel();
-animate();
+fehVerticalCarousel({ 
+    itemsToShow: 6,
+    responsive: [
+        {
+            breakpoint: 0, // viewport height < 500px
+            settings: {
+                itemsToShow: 2,
+                speed: .5
+            }
+        }
+    ]
 });
