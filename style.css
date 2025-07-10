@@ -3,33 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
-    body {
-      margin: 0;
-      background: #111;
-      color: #fff;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+body {
+	background: #111;
+	color: #fff;
+	font-family: sans-serif;
+	/* display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; */
+}
+.wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 1100px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
 
     .carousel-wrapper {
-      width: 100%;
-      max-width: 700px;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+		width: 100%;
+		right: 0;
+		max-width: 50%;
+		height: 100vh;
+		overflow: hidden;
+		position: absolute;
     }
 
     .carousel-track {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      will-change: transform;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		will-change: transform;
     }
 
     .carousel-item {
@@ -42,4 +49,5 @@
       font-weight: bold;
       width: 100%;
       border: 1px solid red;
+	  overflow: hidden;
     }
